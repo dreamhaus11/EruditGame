@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="EruditGame.Core/EruditGame.Core.csproj" />
+  <Project Path="EruditGame.Tests/EruditGame.Tests.csproj" />
+  <Project Path="EruditGame.UI/EruditGame.UI.csproj" />
+</Solution>
