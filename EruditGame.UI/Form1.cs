@@ -50,7 +50,6 @@ namespace EruditGame.UI
                     btn.Tag = new Point(i, j);
                     btn.Click += Cell_Click;
 
-                    // 👇 добавляем бонусные клетки
                     int mult = board.GetMultiplier(i, j);
 
                     if (mult == 2)
@@ -75,31 +74,23 @@ namespace EruditGame.UI
 
             var player = players[currentPlayerIndex];
 
-            // если пустая клетка — ставим букву
             if (btn.Text == "")
             {
-                // проверяем, есть ли буква у игрока
                 if (!player.Letters.Contains(selectedLetter))
                 {
                     MessageBox.Show("У вас нет такой буквы!");
                     return;
                 }
 
-                // ставим букву
                 board.PlaceLetter(point.X, point.Y, selectedLetter);
                 btn.Text = selectedLetter.ToString();
                 btn.BackColor = Color.LightGray;
 
-                // удаляем букву у игрока
                 player.Letters.Remove(selectedLetter);
                 UpdateLetters();
 
                 return;
             }
-
-            // если уже есть буква — выбор слова
-
-            // если уже выбрали 2 точки → начинаем заново
             if (startPoint != null && endPoint != null)
             {
                 ClearSelection();
@@ -129,7 +120,6 @@ namespace EruditGame.UI
             var start = startPoint.Value;
             var end = endPoint.Value;
 
-            // горизонталь
             if (start.X == end.X)
             {
                 int row = start.X;
@@ -141,7 +131,7 @@ namespace EruditGame.UI
                     buttons[row, j].BackColor = Color.LightGreen;
                 }
             }
-            // вертикаль
+        
             else if (start.Y == end.Y)
             {
                 int col = start.Y;
