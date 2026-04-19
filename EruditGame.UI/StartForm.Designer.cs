@@ -52,6 +52,7 @@
             // comboBoxPlayers
             // 
             comboBoxPlayers.BackColor = SystemColors.ScrollBar;
+            comboBoxPlayers.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPlayers.Font = new Font("Segoe UI", 11F);
             comboBoxPlayers.FormattingEnabled = true;
             comboBoxPlayers.Location = new Point(336, 208);

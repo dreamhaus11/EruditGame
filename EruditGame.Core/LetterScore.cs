@@ -8,6 +8,7 @@ namespace EruditGame.Core
 {
     public static class LetterScore
     {
+        //Стоимость буквы
         private static Dictionary<char, int> scores = new Dictionary<char, int>()
         {
             {'А', 1}, {'Б', 3}, {'В', 1}, {'Г', 3}, {'Д', 2},
@@ -18,7 +19,7 @@ namespace EruditGame.Core
             {'Ш', 8}, {'Щ', 10}, {'Ъ', 10}, {'Ы', 4}, {'Ь', 3},
             {'Э', 8}, {'Ю', 8}, {'Я', 3}
         };
-
+         //Возвращает стоимость буквы
         public static int GetScore(char letter)
         {
             if (scores.ContainsKey(letter))

@@ -11,6 +11,7 @@ namespace EruditGame.Core
         private int size;
         private Tile[,] grid;
 
+        //Создание поля
         public Board(int size)
         {
             this.size = size;
@@ -37,16 +38,19 @@ namespace EruditGame.Core
             grid[5, 5].Multiplier = 3;
         }
 
+        //Ставит букву в клетку
         public void PlaceLetter(int x, int y, char letter)
         {
             grid[x, y].Letter = letter;
         }
 
+        //Возвращает букву
         public char GetLetter(int x, int y)
         {
             return grid[x, y].Letter;
         }
 
+        //Возвращает клетку
         public int GetMultiplier(int x, int y)
         {
             return grid[x, y].Multiplier;

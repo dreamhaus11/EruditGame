@@ -8,8 +8,9 @@ namespace EruditGame.Core
 {
     public class Tile
     {
+        //Буква
         public char Letter { get; set; }
-
+        //Множитель
         public int Multiplier { get; set; }
 
         public Tile()

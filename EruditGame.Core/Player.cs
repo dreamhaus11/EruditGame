@@ -12,17 +12,20 @@ namespace EruditGame.Core
         public string Name { get; set; }
         public int Score { get; set; }
 
+        //Игрок
         public Player(string name)
         {
             Name = name;
             Score = 0;
         }
 
+        //Начисление очков
         public void AddScore(int points)
         {
             Score += points;
         }
 
+        //Добавляет набор букв до 7
         public void FillLetters(LetterBag bag)
         {
             while (Letters.Count < 7)
@@ -36,6 +39,7 @@ namespace EruditGame.Core
             }
         }
 
+        // Полностью меняет набор букв
         public void ReplaceLetters(LetterBag bag)
         {
             Letters.Clear();

@@ -11,6 +11,7 @@ namespace EruditGame.Core
         private List<char> letters;
         private Random random = new Random();
 
+        //Набор букв
         public LetterBag()
         {
             letters = new List<char>();
@@ -23,6 +24,7 @@ namespace EruditGame.Core
             }
         }
 
+        //Генератор набора букв
         public char GetRandomLetter()
         {
             if (letters.Count == 0)

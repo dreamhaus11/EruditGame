@@ -13,14 +13,17 @@ namespace EruditGame.UI
 {
     public partial class StartForm : Form
     {
+        //Настройка стартовой формы
         public StartForm()
         {
             InitializeComponent();
 
             comboBoxPlayers.Items.AddRange(new object[] { 2, 3, 4 });
+            comboBoxPlayers.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPlayers.SelectedIndex = 0;
         }
 
+        //Кнопка "Начать игру"
         private void btnStart_Click(object sender, EventArgs e)
         {
             int playerCount = (int)comboBoxPlayers.SelectedItem;
@@ -31,6 +34,7 @@ namespace EruditGame.UI
             this.Hide();
         }
 
+        //Кнопка "Выход"
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

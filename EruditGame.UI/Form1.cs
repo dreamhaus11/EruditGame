@@ -34,6 +34,7 @@ namespace EruditGame.UI
             selectedLetter = players[currentPlayerIndex].Letters[0];
         }
 
+        //Создание игрового поля
         private void InitializeBoard()
         {
             int size = 10;
@@ -66,7 +67,7 @@ namespace EruditGame.UI
                 }
             }
         }
-
+        //Обработка клика по клетке и добавление буквы
         private void Cell_Click(object sender, EventArgs e)
         {
             var btn = sender as Button;
@@ -91,6 +92,7 @@ namespace EruditGame.UI
 
                 return;
             }
+
             if (startPoint != null && endPoint != null)
             {
                 ClearSelection();
@@ -111,7 +113,7 @@ namespace EruditGame.UI
                 HighlightWord();
             }
         }
-
+        //Выделение слова
         private void HighlightWord()
         {
             if (startPoint == null || endPoint == null)
@@ -131,7 +133,7 @@ namespace EruditGame.UI
                     buttons[row, j].BackColor = Color.LightGreen;
                 }
             }
-        
+           
             else if (start.Y == end.Y)
             {
                 int col = start.Y;
@@ -144,7 +146,7 @@ namespace EruditGame.UI
                 }
             }
         }
-
+        //Подключение к словарю
         private void LoadDictionary()
         {
             if (File.Exists("words.txt"))
@@ -157,7 +159,7 @@ namespace EruditGame.UI
                 }
             }
         }
-
+        //Создание игрока
         private void InitializePlayers()
         {
             players = new List<Player>();
@@ -177,7 +179,7 @@ namespace EruditGame.UI
         {
             labelCurrentPlayer.Text = $"Ход: {players[currentPlayerIndex].Name}";
         }
-
+        //Следующий ход и переключение игрока
         private void NextTurn()
         {
             currentPlayerIndex++;
@@ -194,7 +196,7 @@ namespace EruditGame.UI
 
             UpdateCurrentPlayerLabel();
         }
-
+        //Обновление очков
         private void UpdateScoreLabel()
         {
             string text = "";
@@ -206,7 +208,7 @@ namespace EruditGame.UI
 
             labelScore.Text = text;
         }
-
+        
         private void ClearSelection()
         {
             for (int i = 0; i < 10; i++)
@@ -218,7 +220,7 @@ namespace EruditGame.UI
                 }
             }
         }
-
+        //Добавление буквы
         private void UpdateLetters()
         {
             listBoxLetters.Items.Clear();
@@ -231,7 +233,7 @@ namespace EruditGame.UI
                 listBoxLetters.Items.Add($"{letter} ({score})");
             }
         }
-
+        //Кнопка "проверить слово"
         private void buttonCheckWord_Click(object sender, EventArgs e)
         {
             if (startPoint == null || endPoint == null)
@@ -344,7 +346,7 @@ namespace EruditGame.UI
                 selectedLetter = item[0];
             }
         }
-
+        //сообщение о победителе
         private void ShowWinner(Player winner)
         {
             MessageBox.Show($"Победил {winner.Name}!");
@@ -355,6 +357,7 @@ namespace EruditGame.UI
             this.Close();
         }
 
+        //Кнопка "Пропустить ход"
         private void btnSkipTurn_Click(object sender, EventArgs e)
         {
             var player = players[currentPlayerIndex];
