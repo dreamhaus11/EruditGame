@@ -19,6 +19,7 @@ namespace EruditGame.UI
             InitializeComponent();
 
             comboBoxPlayers.Items.AddRange(new object[] { 2, 3, 4 });
+            //Исправление ошибки
             comboBoxPlayers.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPlayers.SelectedIndex = 0;
         }
